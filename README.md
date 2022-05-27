@@ -1,3 +1,3 @@
 # Go
 
-* Repositório de todos os códigos que desenvolvi no curso de Go na plataforma Alura
+* Códigos desenvolvidos na linguagem Go em cursos da plataforma Alura
