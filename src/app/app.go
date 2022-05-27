@@ -4,7 +4,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"time"
 )
+
+const monitoramentos = 3
+const delay = 5
 
 func main() {
 
@@ -28,6 +32,7 @@ func main() {
 		default:
 			fmt.Println("Não conheco este comando")
 		}
+		fmt.Println()
 	}
 }
 
@@ -58,8 +63,25 @@ func leComando() int {
 
 func iniciarMonitoramento() {
 	fmt.Println("Monitorando...")
-	// site := "https://www.utfpr.edu.br/hehehe"
-	site := "https://random-status-code.herokuapp.com/"
+
+	sites := []string{
+		"https://random-status-code.herokuapp.com/",
+		"https://www.utfpr.edu.br/",
+		"https://www.google.com/",
+	}
+
+	// parecido com for i, site in enumerate(sites) no python
+	for i := 0; i < monitoramentos; i++ {
+		for _, site := range sites {
+			testaSite(site)
+		}
+		fmt.Println()
+		time.Sleep(delay * time.Second)
+	}
+
+}
+
+func testaSite(site string) {
 	resp, _ := http.Get(site)
 
 	if resp.StatusCode == 200 {
