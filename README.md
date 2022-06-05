@@ -1,3 +1,3 @@
-# Go
+# Fundamentos Go
 
-* Códigos desenvolvidos na linguagem Go em cursos da plataforma Alura
+* Códigos da base da linguagem Go desenvolvidos em cursos da plataforma Alura
